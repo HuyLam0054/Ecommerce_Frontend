@@ -1,7 +1,6 @@
+"use client";
 import * as React from "react";
 
-export interface IDrawerNavbarProps {}
-
-export function DrawerNavbar(props: IDrawerNavbarProps) {
+export function DrawerNavbar() {
   return <div></div>;
 }

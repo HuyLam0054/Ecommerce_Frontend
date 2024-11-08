@@ -4,9 +4,7 @@ import { Indicator_Numb } from "@/components/common/indicators/indicator_numb";
 import * as React from "react";
 import { FaCartArrowDown, FaHeart } from "react-icons/fa";
 
-export interface ISidebar_RootProps {}
-
-export function Sidebar_Root(props: ISidebar_RootProps) {
+export function Sidebar_Root() {
   return (
     <>
       <aside className="fixed top-[72px] right-0 z-40 w-64 h-screen transition-transform sm:translate-x-0 md:hidden">

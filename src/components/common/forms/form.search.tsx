@@ -2,9 +2,7 @@
 import * as React from "react";
 import { FaSearch } from "react-icons/fa";
 
-export interface ISearchFormProps {}
-
-export function SearchForm(props: ISearchFormProps) {
+export function SearchForm() {
   return (
     <div className="relative lg:block ">
       <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
