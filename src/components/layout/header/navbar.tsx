@@ -10,17 +10,19 @@ import {
   NavbarHelp,
 } from "../../common/navbar";
 import { MdMenuOpen } from "react-icons/md";
-import { SearchForm } from "../../common/form/form.search";
-import { FaCartArrowDown, FaHeart, FaSearch } from "react-icons/fa";
-import { Indicator_Numb } from "../../common/indicator/indicator_numb";
+import { SearchForm } from "../../common/forms/form.search";
+import { Sidebar_Root } from "../sidebar/sidebar_root";
+import { Cart_Button } from "@/components/common/buttons/cart.button";
+import { Favorite_Button } from "@/components/common/buttons/favorite.button";
+import { SignIn_Button } from "@/components/common/buttons/signin.button";
 
 export function NavbarRoot() {
   const [isDrawer, setIsDrawer] = React.useState<Boolean>(false);
 
   return (
-    <nav className="bg-gray-200 border-gray-200 dark:bg-gray-900">
-      <div className="max-w-screen-2xl hidden md:flex flex-wrap items-center justify-between mx-auto">
-        <div className="items-center justify-between w-full md:flex md:w-auto text-sm ml-10">
+    <nav className="bg-gray-200 border-gray-200 dark:bg-gray-900 fixed lg:block w-full">
+      <div className="max-w-screen-2xl hidden md:flex flex-wrap items-center justify-between lg:mx-16 mt-2">
+        <div className="items-center justify-between w-full md:flex md:w-auto text-sm">
           <ul className="flex items-center justify-center font-normal ">
             <li className="relative group px-3 py-2 cursor-pointer bg-transparent bg-clip-text text-transparent bg-gradient-to-br from-gray-600 to-gray-600 via-gray-600 font-sm hover:from-blue-800 hover:to-indigo-800 hover:via-pink-800 block">
               <Link href="#" className="cursor-pointer">
@@ -30,7 +32,7 @@ export function NavbarRoot() {
             |
             <li className="relative group px-3 py-2 cursor-pointer bg-transparent bg-clip-text text-transparent bg-gradient-to-br from-gray-600 to-gray-600 via-gray-600 font-sm hover:from-blue-800 hover:to-indigo-800 hover:via-pink-800 block">
               <Link href="#" className="cursor-pointer">
-                Address
+                Store
               </Link>
             </li>
             |
@@ -48,26 +50,10 @@ export function NavbarRoot() {
             </li>
           </ul>
         </div>
-        <div className="items-center justify-between w-full md:flex md:w-auto text-sm mr-10">
-          <ul className="flex items-center justify-center font-normal ">
-            <li className="flex relative group py-2 cursor-pointer hover:text-[green] hover:-mt-1 mx-2">
-              <FaCartArrowDown className="w-5 h-5 mr-3" />
-              <Indicator_Numb indicator_numb={2} />
-            </li>
-            <li className="flex relative group py-2 cursor-pointer hover:text-[red] hover:-mt-1 mx-2">
-              <FaHeart className="w-5 h-5 mr-3" />
-              <Indicator_Numb indicator_numb={2} />
-            </li>
-            <li className="relative group py-2 cursor-pointer hover:text-[green]">
-              <button
-                onClick={() => {}}
-                type="button"
-                className="font-medium rounded-lg text-sm px-4 py-2 md:p-3 focus:outline-none"
-              >
-                Sign In
-              </button>
-            </li>
-          </ul>
+        <div className="items-center justify-between w-full md:flex md:w-auto text-sm gap-8 py-2">
+          <SearchForm />
+          <Cart_Button />
+          <Favorite_Button />
         </div>
       </div>
       <div
@@ -82,9 +68,9 @@ export function NavbarRoot() {
             height={500}
             src="https://www.svgrepo.com/show/69341/apple-logo.svg"
             alt=" Logo"
-            className="h-8 w-8 ml-10 mr-2 lg:ml-20"
+            className="h-8 w-8 lg:mr-2 lg:ml-20"
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white mt-1">
             Apple
           </span>
         </Link>
@@ -113,14 +99,10 @@ export function NavbarRoot() {
             </li>
           </ul>
         </div>
-        <div className="lg:flex md:order-2 hidden mr-10">
-          <button
-            type="button"
-            className="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1"
-          >
-            <FaSearch className="w-5 h-5 text-gray-400" />
-          </button>
-          <SearchForm />
+        <div className="relative group hidden md:block lg:mr-10">
+          <SignIn_Button />
+        </div>
+        <div className="lg:hidden md:order-2 lg:mr-10">
           <button
             type="button"
             onClick={() => setIsDrawer(!isDrawer)}
@@ -128,6 +110,7 @@ export function NavbarRoot() {
           >
             <MdMenuOpen className="w-5 h-5" />
           </button>
+          {isDrawer && <Sidebar_Root />}
         </div>
       </div>
     </nav>

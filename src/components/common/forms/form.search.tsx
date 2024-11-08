@@ -6,7 +6,7 @@ export interface ISearchFormProps {}
 
 export function SearchForm(props: ISearchFormProps) {
   return (
-    <div className="relative hidden md:block">
+    <div className="relative lg:block ">
       <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
         <FaSearch className="w-5 h-5 text-gray-400" />
         <span className="sr-only">Search icon</span>
