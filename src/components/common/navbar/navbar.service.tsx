@@ -1,11 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import * as React from "react";
-import Link from "next/link";
 
-export interface INavbar_ServiceProps {}
-
-export function Navbar_Service(props: INavbar_ServiceProps) {
+export function Navbar_Service() {
   return (
     <div className="absolute -mt-3 -left-2 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[260px] transform">
       <div className="relative top-2 p-6 bg-white rounded-xl shadow-xl w-full">

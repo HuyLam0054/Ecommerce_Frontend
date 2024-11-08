@@ -3,9 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 
-export interface INavbar_ProductProps {}
-
-export function Navbar_Product(props: INavbar_ProductProps) {
+export function Navbar_Product() {
   return (
     <div className="absolute -mt-3 -left-40 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[500px] lg:min-w-[800px] transform">
       <div className="relative top-2 p-6 bg-white rounded-xl shadow-xl w-full">
