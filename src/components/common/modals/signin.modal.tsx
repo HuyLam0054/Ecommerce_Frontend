@@ -2,7 +2,7 @@
 import * as React from "react";
 
 export interface ISignIn_ModalProps {
-  setOpenModal: React.Dispatch<React.SetStateAction<Boolean>>;
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export function SignIn_Modal({ setOpenModal }: ISignIn_ModalProps) {

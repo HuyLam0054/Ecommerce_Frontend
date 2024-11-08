@@ -17,7 +17,7 @@ import { Favorite_Button } from "@/components/common/buttons/favorite.button";
 import { SignIn_Button } from "@/components/common/buttons/signin.button";
 
 export function NavbarRoot() {
-  const [isDrawer, setIsDrawer] = React.useState(false);
+  const [isDrawer, setIsDrawer] = React.useState<boolean>(false);
 
   return (
     <nav className="bg-gray-200 border-gray-200 dark:bg-gray-900 fixed lg:block w-full">
