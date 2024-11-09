@@ -9,9 +9,9 @@ export function SignIn_Button() {
       <button
         type="button"
         onClick={() => setOpenModal(true)}
-        className="flex items-center text-center w-full p-2 text-base text-gray-900 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+        className="inline-flex items-center px-9 py-2.5 text-sm font-medium text-center text-white bg-gray-700 rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       >
-        Sign In
+        <span className="mx-auto">Sign In</span>
       </button>
       {openModal && <SignIn_Modal setOpenModal={setOpenModal} />}
     </>

@@ -37,8 +37,6 @@ export const navbar: Navbar[] = [
           { title: "iPhone 12 Series", url: "/" },
           { title: "iPhone 11 Series", url: "/" },
           { title: "iPhone X Series", url: "/" },
-          { title: "iPhone 8 Series", url: "/" },
-          { title: "iPhone 7 Series", url: "/" },
         ],
       },
       {
@@ -63,8 +61,6 @@ export const navbar: Navbar[] = [
           { title: "Watch Series 6", url: "/" },
           { title: "Watch Series SE", url: "/" },
           { title: "Watch Series 5", url: "/" },
-          { title: "Watch Series 4", url: "/" },
-          { title: "Watch Series 3", url: "/" },
         ],
       },
       {
@@ -103,8 +99,6 @@ export const navbar: Navbar[] = [
           { title: "iPhone 12 Series", url: "/" },
           { title: "iPhone 11 Series", url: "/" },
           { title: "iPhone X Series", url: "/" },
-          { title: "iPhone 8 Series", url: "/" },
-          { title: "iPhone 7 Series", url: "/" },
         ],
       },
       {
@@ -129,8 +123,6 @@ export const navbar: Navbar[] = [
           { title: "Watch Series 6", url: "/" },
           { title: "Watch Series SE", url: "/" },
           { title: "Watch Series 5", url: "/" },
-          { title: "Watch Series 4", url: "/" },
-          { title: "Watch Series 3", url: "/" },
         ],
       },
       {

@@ -1,93 +1,310 @@
+"use client";
+import { Cart_Button } from "@/components/common/buttons/cart.button";
+import { Favorite_Button } from "@/components/common/buttons/favorite.button";
 import { SignIn_Button } from "@/components/common/buttons/signin.button";
+import { Signout_Button } from "@/components/common/buttons/signout.button";
 import { SearchForm } from "@/components/common/forms/form.search";
-import { Indicator_Numb } from "@/components/common/indicators/indicator_numb";
+import Link from "next/link";
 import * as React from "react";
-import { FaCartArrowDown, FaHeart } from "react-icons/fa";
+import { AiOutlineProduct } from "react-icons/ai";
+import { FaInfo, FaNewspaper, FaRegStar } from "react-icons/fa";
+import { IoIosArrowUp } from "react-icons/io";
+import { LuMessageSquare } from "react-icons/lu";
+import { RiCustomerService2Line } from "react-icons/ri";
 
 export function Sidebar_Root() {
+  const [openProducts, setOpenProducts] = React.useState<boolean>(false);
+  const [openServices, setOpenServices] = React.useState<boolean>(false);
+  const [openSpecial, setOpenSpecial] = React.useState<boolean>(false);
   return (
     <>
-      <aside className="fixed top-[72px] right-0 z-40 w-64 h-screen transition-transform sm:translate-x-0 md:hidden">
-        <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-          <ul className="space-y-2 font-medium">
+      <aside className="fixed top-[72px] right-0 z-40 w-64 h-[calc(100vh-72px)] transition-transform sm:translate-x-0 md:hidden">
+        <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 ">
+          {/* Menu Product + service */}
+          <ul className="space-y-2 block w-full mr-auto font-sans text-base antialiased font-normal leading-relaxed text-blue-gray-900">
             <li className="flex">
               <SignIn_Button />
               <ul className="flex items-center justify-center font-normal ml-4">
                 <li className="flex relative group py-2 cursor-pointer hover:text-[green] hover:-mt-1 mx-2">
-                  <FaCartArrowDown className="w-5 h-5 mr-3" />
-                  <Indicator_Numb indicator_numb={2} />
+                  <Cart_Button />
                 </li>
                 <li className="flex relative group py-2 cursor-pointer hover:text-[red] hover:-mt-1 mx-2">
-                  <FaHeart className="w-5 h-5 mr-3" />
-                  <Indicator_Numb indicator_numb={2} />
+                  <Favorite_Button />
                 </li>
               </ul>
             </li>
-
             <li>
               <SearchForm />
             </li>
             <li>
               <button
                 type="button"
+                onClick={() => {
+                  setOpenProducts(!openProducts);
+                  setOpenServices(false);
+                  setOpenSpecial(false);
+                }}
                 className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
               >
-                <svg
-                  className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 18 21"
-                >
-                  <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z" />
-                </svg>
+                <AiOutlineProduct />
                 <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
-                  E-commerce
+                  Products
                 </span>
-                <svg
-                  className="w-3 h-3"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 6"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m1 1 4 4 4-4"
-                  />
-                </svg>
+                <IoIosArrowUp
+                  className={`${openProducts ? "rotate-180" : ""} duration-75`}
+                />
               </button>
-              <ul id="dropdown-example" className="hidden py-2 space-y-2">
+              <ul
+                className={`overflow-hidden transition-all duration-100 ease-in-out ${
+                  openProducts
+                    ? "max-h-[1000px] opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                   >
-                    Products
-                  </a>
+                    Iphone
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                   >
-                    Billing
-                  </a>
+                    Ipad
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                   >
-                    Invoice
-                  </a>
+                    Watch
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >
+                    Macbook
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >
+                    Accessories
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <button
+                type="button"
+                onClick={() => {
+                  setOpenServices(!openServices);
+                  setOpenProducts(false);
+                  setOpenSpecial(false);
+                }}
+                className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              >
+                <RiCustomerService2Line className="" />
+                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
+                  Service
+                </span>
+                <IoIosArrowUp
+                  className={`${openServices ? "rotate-180" : ""} duration-75`}
+                />
+              </button>
+              <ul
+                className={`overflow-hidden transition-all duration-100 ease-in-out ${
+                  openServices
+                    ? "max-h-[1000px] opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <li>
+                  <Link
+                    href="#"
+                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >
+                    Product Setup & Installation
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >
+                    Repairs & Technical Support
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >
+                    Product Personalization
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >
+                    Trade-In Service
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >
+                    Gift Wrapping Service
+                  </Link>
                 </li>
               </ul>
             </li>
           </ul>
+          <hr className="my-4 border-t-2 border-gray-300" />
+          {/* Other */}
+          <ul className="space-y-2 block w-full mr-auto font-sans text-base antialiased font-normal leading-relaxed text-blue-gray-900">
+            <li>
+              <button
+                type="button"
+                onClick={() => {
+                  setOpenSpecial(!openSpecial);
+                  setOpenServices(false);
+                  setOpenProducts(false);
+                }}
+                className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              >
+                <FaRegStar />
+                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
+                  Special Offer
+                </span>
+                <IoIosArrowUp
+                  className={`${openSpecial ? "rotate-180" : ""} duration-75`}
+                />
+              </button>
+              <ul
+                className={`overflow-hidden transition-all duration-100 ease-in-out ${
+                  openSpecial
+                    ? "max-h-[1000px] opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <li>
+                  <Link
+                    href="#"
+                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >
+                    Direct Discount
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >
+                    Bundle Offer
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >
+                    Trade-In Program
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >
+                    Education Store Discount
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >
+                    Free Software/Service Offer
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >
+                    Installment Payment Plan
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <button
+                type="button"
+                onClick={() => {}}
+                className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              >
+                <FaInfo />
+                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
+                  About us
+                </span>
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                onClick={() => {}}
+                className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              >
+                <FaNewspaper />
+                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
+                  News
+                </span>
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                onClick={() => {}}
+                className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              >
+                <RiCustomerService2Line className="" />
+                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
+                  Service
+                </span>
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              >
+                <LuMessageSquare className="" />
+                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
+                  Inbox
+                </span>
+                <span className="text-red-500 dark:text-red-300 font-bold">
+                  2
+                </span>
+              </button>
+            </li>
+          </ul>
+          {/* Last */}
+          <hr className="my-4 border-t-2 border-gray-300" />
+          <div className="mt-auto mx-auto">
+            <Signout_Button />
+          </div>
         </div>
       </aside>
     </>

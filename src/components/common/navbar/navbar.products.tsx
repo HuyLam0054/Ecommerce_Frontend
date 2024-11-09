@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function Navbar_Product() {
   return (
-    <div className="absolute -mt-3 -left-40 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[500px] lg:min-w-[800px] transform">
+    <div className="absolute -mt-3 -left-40 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[800px] transform">
       <div className="relative top-2 p-6 bg-white rounded-xl shadow-xl w-full">
         <div className="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[10rem] duration-500 ease-in-out rounded-sm" />
         <div className="relative z-10">
@@ -19,7 +19,7 @@ export function Navbar_Product() {
               enim ad minim veniam, quis nostrud exercitation.
             </p>
           </Link>
-          <div className="mt-3 grid grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="mt-3 grid grid-cols-5 gap-6">
             <div>
               <p className="uppercase tracking-wider text-gray-500 text-[13px] font-extrabold ">
                 iPhone
@@ -71,22 +71,6 @@ export function Navbar_Product() {
                     className="bg-transparent bg-clip-text text-transparent bg-gradient-to-br from-gray-600 to-gray-600 via-gray-600 font-sm hover:from-blue-800 hover:to-indigo-800 hover:via-pink-800 py-1 block"
                   >
                     iPhone X Series
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="bg-transparent bg-clip-text text-transparent bg-gradient-to-br from-gray-600 to-gray-600 via-gray-600 font-sm hover:from-blue-800 hover:to-indigo-800 hover:via-pink-800 py-1 block"
-                  >
-                    iPhone 8 Series
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="bg-transparent bg-clip-text text-transparent bg-gradient-to-br from-gray-600 to-gray-600 via-gray-600 font-sm hover:from-blue-800 hover:to-indigo-800 hover:via-pink-800 py-1 block"
-                  >
-                    iPhone 7 Series
                   </Link>
                 </li>
               </ul>
@@ -173,30 +157,6 @@ export function Navbar_Product() {
                     className="bg-transparent bg-clip-text text-transparent bg-gradient-to-br from-gray-600 to-gray-600 via-gray-600 font-sm hover:from-blue-800 hover:to-indigo-800 hover:via-pink-800 py-1 block"
                   >
                     Watch Series SE
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="bg-transparent bg-clip-text text-transparent bg-gradient-to-br from-gray-600 to-gray-600 via-gray-600 font-sm hover:from-blue-800 hover:to-indigo-800 hover:via-pink-800 py-1 block"
-                  >
-                    Watch Series 5
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="bg-transparent bg-clip-text text-transparent bg-gradient-to-br from-gray-600 to-gray-600 via-gray-600 font-sm hover:from-blue-800 hover:to-indigo-800 hover:via-pink-800 py-1 block"
-                  >
-                    Watch Series 4
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="bg-transparent bg-clip-text text-transparent bg-gradient-to-br from-gray-600 to-gray-600 via-gray-600 font-sm hover:from-blue-800 hover:to-indigo-800 hover:via-pink-800 py-1 block"
-                  >
-                    Watch Series 3
                   </Link>
                 </li>
               </ul>
