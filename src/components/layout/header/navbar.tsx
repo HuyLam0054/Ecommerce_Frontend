@@ -65,9 +65,9 @@ export function NavbarRoot() {
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <FaApple className="h-8 w-8 lg:mr-2 lg:ml-20 dark:text-white" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white mt-1">
-            Apple
+          <FaApple className="h-8 w-8 lg:ml-20 dark:text-white" />
+          <span className="self-center text-2xl font-semibold whitespace-nowrap mt-1 dark:text-white">
+            Brian Apple
           </span>
         </Link>
         <div className="items-center justify-between hidden w-full md:flex md:w-auto ">

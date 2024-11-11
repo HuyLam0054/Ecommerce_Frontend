@@ -8,7 +8,7 @@ import { Specifications_Table } from "@/components/common/tables/specifications.
 import { Comment_Content } from "@/components/common/contents/comment";
 import { Recomment_Product } from "@/components/common/contents/recomemd.product";
 
-export default function DetailIpadPage() {
+export default function DetailPage() {
   const pathname = usePathname();
 
   return (

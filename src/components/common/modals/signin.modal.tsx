@@ -15,7 +15,7 @@ export function SignIn_Modal({ setOpenModal }: ISignIn_ModalProps) {
         <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
           <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-              Sign in to Shopping
+              Sign in to Continue
             </h3>
             <button
               type="button"
@@ -109,7 +109,7 @@ export function SignIn_Modal({ setOpenModal }: ISignIn_ModalProps) {
                 width={500}
                 height={500}
                 className="max-w-[25px]"
-                src="https://ucarecdn.com/8f25a2ba-bdcf-4ff1-b596-088f330416ef/"
+                src="/icons/google_icons.svg"
                 alt="Google"
               />
             </button>
@@ -119,7 +119,7 @@ export function SignIn_Modal({ setOpenModal }: ISignIn_ModalProps) {
                 width={500}
                 height={500}
                 className="max-w-[25px] filter dark:invert"
-                src="https://ucarecdn.com/be5b0ffd-85e8-4639-83a6-5162dfa15a16/"
+                src="/icons/github_icons.svg"
                 alt="Github"
               />
             </button>
@@ -129,7 +129,7 @@ export function SignIn_Modal({ setOpenModal }: ISignIn_ModalProps) {
                 width={500}
                 height={500}
                 className="max-w-[25px]"
-                src="https://ucarecdn.com/6f56c0f1-c9c0-4d72-b44d-51a79ff38ea9/"
+                src="/icons/facebook_icons.svg"
                 alt="Facebook"
               />
             </button>
