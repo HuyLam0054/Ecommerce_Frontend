@@ -10,12 +10,22 @@ export default function ProductsPage() {
   const pathname = usePathname();
 
   return (
-    <div className="p-4 min-h-screen pt-20 lg:pt-32 dark:bg-gray-700 lg:px-14">
-      <div className="mb-4 items-end justify-between space-y-4 sm:flex sm:space-y-0 md:mb-8 max-w-screen-2xl mx-auto ">
+    <div className="min-h-screen pt-20 lg:pt-32 dark:bg-gray-700 lg:px-14">
+      <div className="mb-4 items-end justify-between space-x-3 sm:flex sm:space-y-0 md:mb-8 max-w-screen-2xl mx-auto px-3">
         <Main_Breadcrumb pathname={pathname} />
         <Filter_And_Soft_Button />
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+
+      <div className="grid lg:grid-cols-3 xl:grid-cols-4 mx-auto justify-items-center items-center gap-4 px-3">
+        <Product_Card
+          discount={35}
+          href="/products/ipad/iPad27"
+          img="/img/ipad_pro.png"
+          name='Apple iPad 27", 1TB HDD, Retina 5K Display, M3 Max'
+          rating={4.3}
+          review_numb={251}
+          price={899}
+        />
         <Product_Card
           discount={35}
           href="/products/ipad/iPad27"

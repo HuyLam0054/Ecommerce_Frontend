@@ -4,7 +4,7 @@ import { CiImageOn } from "react-icons/ci";
 
 export default function Card_Product_Skeleton() {
   return (
-    <div className="rounded-lg border lg:max-w-sm border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+    <div className="rounded-lg border max-w-sm border-gray-200 bg-white mr-2 p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
       <div className="h-56 w-full">
         <div className="flex items-center justify-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700">
           <CiImageOn className="text-gray-400" />
