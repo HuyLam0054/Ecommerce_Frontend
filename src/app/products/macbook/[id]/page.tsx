@@ -19,8 +19,8 @@ export default function DetailPage() {
           <Detail_Img_Card />
           <Product_Content
             name={`Ipad Pro 11 Series`}
-            old_prize={349.99}
-            new_prize={399.99}
+            old_price={349.99}
+            new_price={399.99}
             star={4.4}
             numb_review={120}
             detail_content={`Experience premium sound quality and industry-leading noise

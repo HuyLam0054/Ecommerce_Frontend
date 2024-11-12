@@ -15,7 +15,7 @@ export function Recomment_Product() {
             <Image
               width={1000}
               height={1000}
-              src="https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg"
+              src="/img/ipad_pro.png"
               alt="Front of men&#039;s Basic Tee in black."
               className="h-full w-full object-cover object-center lg:h-full lg:w-full"
             />
@@ -38,7 +38,7 @@ export function Recomment_Product() {
             <Image
               width={1000}
               height={1000}
-              src="https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg"
+              src="/img/ipad_pro.png"
               alt="Front of men&#039;s Basic Tee in black."
               className="h-full w-full object-cover object-center lg:h-full lg:w-full"
             />
@@ -61,7 +61,7 @@ export function Recomment_Product() {
             <Image
               width={1000}
               height={1000}
-              src="https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg"
+              src="/img/ipad_pro.png"
               alt="Front of men&#039;s Basic Tee in black."
               className="h-full w-full object-cover object-center lg:h-full lg:w-full"
             />
@@ -84,7 +84,7 @@ export function Recomment_Product() {
             <Image
               width={1000}
               height={1000}
-              src="https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg"
+              src="/img/ipad_pro.png"
               alt="Front of men&#039;s Basic Tee in black."
               className="h-full w-full object-cover object-center lg:h-full lg:w-full"
             />

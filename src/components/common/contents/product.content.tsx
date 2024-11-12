@@ -4,8 +4,8 @@ import { FaCartArrowDown, FaHeart } from "react-icons/fa";
 import { Rating } from "../rating/product.rating";
 export interface IAppProps {
   name: string;
-  old_prize: number;
-  new_prize: number;
+  old_price: number;
+  new_price: number;
   star: number;
   numb_review: number;
   detail_content: string;
@@ -22,10 +22,10 @@ export function Product_Content(props: IAppProps) {
               </h2>
               <div className="mb-4">
                 <span className="text-2xl font-bold dark:text-white mr-2">
-                  ${props.new_prize}
+                  ${props.new_price}
                 </span>
                 <span className="text-gray-500 dark:text-gray-200 line-through">
-                  ${props.old_prize}
+                  ${props.old_price}
                 </span>
               </div>
               <Rating rating={props.star} numb_review={props.numb_review} />
@@ -33,8 +33,8 @@ export function Product_Content(props: IAppProps) {
                 {props.detail_content}
               </p>
 
-              <div className="mb-6 grid grid-cols-2">
-                <div className="flex">
+              <div className="pb-5">
+                <div className="flex mb-6">
                   <h3 className="text-lg font-semibold mr-3 dark:text-gray-300 mt-0.5">
                     Color:
                   </h3>
@@ -47,7 +47,7 @@ export function Product_Content(props: IAppProps) {
                 <div className="flex flex-row">
                   <label
                     htmlFor="quantity"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mt-2 ml-10 mr-2"
+                    className="block text-lg font-medium text-gray-700 dark:text-gray-300 mt-2 mr-2"
                   >
                     Quantity:
                   </label>
@@ -56,7 +56,6 @@ export function Product_Content(props: IAppProps) {
                     id="quantity"
                     name="quantity"
                     min="1"
-                    // value="1"
                     className="w-12 text-center rounded-md border-gray-300  shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 mt-1"
                   />
                 </div>
