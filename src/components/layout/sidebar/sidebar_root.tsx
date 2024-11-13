@@ -1,6 +1,5 @@
 "use client";
-import { Cart_Button } from "@/components/common/buttons/cart.button";
-import { Favorite_Button } from "@/components/common/buttons/favorite.button";
+
 import { SignIn_Button } from "@/components/common/buttons/signin.button";
 import { Signout_Button } from "@/components/common/buttons/signout.button";
 import { SearchForm } from "@/components/common/forms/form.search";
@@ -24,14 +23,6 @@ export function Sidebar_Root() {
           <ul className="space-y-2 block w-full mr-auto font-sans text-base antialiased font-normal leading-relaxed text-blue-gray-900">
             <li className="flex">
               <SignIn_Button />
-              <ul className="flex items-center justify-center font-normal ml-4">
-                <li className="flex relative group py-2 cursor-pointer hover:text-[green] hover:-mt-1 mx-2">
-                  <Cart_Button />
-                </li>
-                <li className="flex relative group py-2 cursor-pointer hover:text-[red] hover:-mt-1 mx-2">
-                  <Favorite_Button />
-                </li>
-              </ul>
             </li>
             <li>
               <SearchForm />

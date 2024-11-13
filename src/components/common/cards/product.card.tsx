@@ -22,7 +22,7 @@ interface Product_Item {
 }
 export function Product_Card(props: Product_Item) {
   return (
-    <div className="rounded-lg border max-w-sm border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+    <div className="rounded-lg border max-w-sm border-gray-200 bg-white mr-2 p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
       <div className="h-56 w-full">
         <Link href={props.href}>
           <Image

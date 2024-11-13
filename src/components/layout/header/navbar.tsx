@@ -14,7 +14,7 @@ import { Sidebar_Root } from "../sidebar/sidebar_root";
 import { Cart_Button } from "@/components/common/buttons/cart.button";
 import { Favorite_Button } from "@/components/common/buttons/favorite.button";
 import { SignIn_Button } from "@/components/common/buttons/signin.button";
-import { Inbox_Button } from "@/components/common/buttons/inbox.button";
+import { Message_Button } from "@/components/common/buttons/message.button";
 import { FaApple } from "react-icons/fa";
 
 export function NavbarRoot() {
@@ -52,9 +52,11 @@ export function NavbarRoot() {
           </ul>
         </div>
         <div className="items-center justify-between w-full md:flex md:w-auto text-sm me-16 gap-6">
-          <Cart_Button />
-          <Favorite_Button />
-          <Inbox_Button />
+          <div className="hidden lg:flex flex-row gap-10 px-4">
+            <Cart_Button numb={0} />
+            <Favorite_Button numb={1} />
+            <Message_Button numb={2} />
+          </div>
           <SearchForm />
         </div>
       </div>
