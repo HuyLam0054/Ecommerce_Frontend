@@ -44,7 +44,15 @@ export default function ProductsPage() {
           review_numb={251}
           price={899}
         />
-        <Card_Product_Skeleton />
+        <Product_Card
+          discount={35}
+          href="/products/ipad/iPad27"
+          img=""
+          name='Apple iPad 27", 1TB HDD, Retina 5K Display, M3 Max'
+          rating={4.3}
+          review_numb={251}
+          price={899}
+        />
       </div>
     </div>
   );
