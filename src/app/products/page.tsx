@@ -1,9 +1,9 @@
 "use client";
+
 import * as React from "react";
 import { usePathname } from "next/navigation";
 import { Main_Breadcrumb } from "@/components/common/breadcrumbs/main.breadcrumb";
 import { Product_Card } from "@/components/common/cards/product.card";
-import Card_Product_Skeleton from "@/components/common/skeletons/cardproduct.skeleton";
 import Filter_And_Soft_Button from "@/components/common/buttons/group-button/filter&soft.button";
 
 export default function ProductsPage() {
