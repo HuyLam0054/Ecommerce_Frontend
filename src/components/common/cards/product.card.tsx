@@ -29,7 +29,7 @@ export function Product_Card(props: Product_Item) {
             width={500}
             height={500}
             className="mx-auto h-full object-cover"
-            src={props.img}
+            src={props.img ? props.img : "/icons/ipad.svg"}
             alt={props.name}
           />
         </Link>

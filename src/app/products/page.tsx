@@ -16,11 +16,11 @@ export default function ProductsPage() {
         <Filter_And_Soft_Button />
       </div>
 
-      <div className="grid lg:grid-cols-3 xl:grid-cols-4 mx-auto justify-items-center items-center gap-4 px-3">
+      <div className="grid lg:grid-cols-3 xl:grid-cols-4 mx-auto justify-items-center items-center gap-8 px-3">
         <Product_Card
           discount={35}
           href="/products/ipad/iPad27"
-          img="/img/ipad_pro.png"
+          img=""
           name='Apple iPad 27", 1TB HDD, Retina 5K Display, M3 Max'
           rating={4.3}
           review_numb={251}
@@ -29,7 +29,7 @@ export default function ProductsPage() {
         <Product_Card
           discount={35}
           href="/products/ipad/iPad27"
-          img="/img/ipad_pro.png"
+          img=""
           name='Apple iPad 27", 1TB HDD, Retina 5K Display, M3 Max'
           rating={4.3}
           review_numb={251}
@@ -38,7 +38,7 @@ export default function ProductsPage() {
         <Product_Card
           discount={35}
           href="/products/ipad/iPad27"
-          img="/img/ipad_pro.png"
+          img=""
           name='Apple iPad 27", 1TB HDD, Retina 5K Display, M3 Max'
           rating={4.3}
           review_numb={251}
