@@ -1,9 +1,10 @@
 "use client";
+
 import * as React from "react";
 import { usePathname } from "next/navigation";
 import { Main_Breadcrumb } from "@/components/common/breadcrumbs";
 
-export default function NewsPage() {
+export default function ServicesPage() {
   const pathname = usePathname();
 
   return (

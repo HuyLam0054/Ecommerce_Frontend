@@ -2,17 +2,21 @@
 
 import * as React from "react";
 import { usePathname } from "next/navigation";
-import { Main_Breadcrumb } from "@/components/common/breadcrumbs/main.breadcrumb";
-import { Product_Card } from "@/components/common/cards/product.card";
+import { Main_Breadcrumb } from "@/components/common/breadcrumbs";
+import { Product_Card } from "@/components/common/cards";
 import Filter_And_Soft_Button from "@/components/common/buttons/group-button/filter&soft.button";
 
 export default function ProductsPage() {
   const pathname = usePathname();
 
   return (
-    <div className="min-h-screen pt-20 lg:pt-32 dark:bg-gray-700 lg:px-14">
-      <div className="mb-4 items-end justify-between space-x-3 sm:flex sm:space-y-0 md:mb-8 max-w-screen-2xl mx-auto px-3">
+    <div className="min-h-screen pt-20 lg:pt-32 dark:bg-gray-700 lg:p-14">
+      <div className="mt-2 items-end justify-between space-x-3 sm:flex sm:space-y-0 md:mb-8 max-w-screen-2xl mx-auto px-3">
         <Main_Breadcrumb pathname={pathname} />
+      </div>
+      {/* Popular */}
+      <div className="flex justify-between mb-5 px-5">
+        <div className="font-bold text-2xl">Populars Products</div>
         <Filter_And_Soft_Button />
       </div>
 

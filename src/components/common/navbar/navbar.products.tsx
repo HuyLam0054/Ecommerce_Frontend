@@ -9,26 +9,27 @@ export function Navbar_Product() {
         <div className="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[10rem] duration-500 ease-in-out rounded-sm" />
         <div className="relative z-10">
           <Link
-            href="/"
+            href="/products/new"
             className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
           >
             New Products
             <p className="text-gray-500 font-normal">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation.
+              Apple’s newest product combines powerful performance, a stunning
+              display, and advanced camera features, all in a sleek,
+              eco-friendly design. Perfect for work and play, it delivers speed,
+              style, and sustainability.
             </p>
           </Link>
           <div className="mt-3 grid grid-cols-5 gap-6">
             <div>
-              <p className="uppercase tracking-wider text-gray-500 text-[13px] font-extrabold ">
+              <p className="uppercase tracking-wider text-gray-500 text-[13px] font-bold ">
                 iPhone
               </p>
-              <ul className="mt-3 text-[15px]">
+              <ul className="mt-3 font-normal">
                 <li>
                   <Link
                     href="#"
-                    className="bg-transparent bg-clip-text text-transparent bg-gradient-to-br from-gray-600 to-gray-600 via-gray-600 font-sm hover:from-blue-800 hover:to-indigo-800 hover:via-pink-800 py-1 block"
+                    className="bg-transparent bg-clip-text text-transparent bg-gradient-to-br from-gray-600 to-gray-600 via-gray-600 hover:from-blue-800 hover:to-indigo-800 hover:via-pink-800 py-1 block"
                   >
                     iPhone 15 Series
                   </Link>
@@ -76,10 +77,10 @@ export function Navbar_Product() {
               </ul>
             </div>
             <div>
-              <p className="uppercase tracking-wider text-gray-500 text-[13px] font-extrabold">
+              <p className="uppercase tracking-wider text-gray-500 text-[13px] font-bold">
                 ipad
               </p>
-              <ul className="mt-3 text-[15px]">
+              <ul className="mt-3 font-normal">
                 <li>
                   <Link
                     href="#"
@@ -115,10 +116,10 @@ export function Navbar_Product() {
               </ul>
             </div>
             <div>
-              <p className="uppercase tracking-wider text-gray-500 text-[13px] font-extrabold">
+              <p className="uppercase tracking-wider text-gray-500 text-[13px] font-bold">
                 Watch
               </p>
-              <ul className="mt-3 text-[15px]">
+              <ul className="mt-3 font-normal">
                 <li>
                   <Link
                     href="#"
@@ -162,10 +163,10 @@ export function Navbar_Product() {
               </ul>
             </div>
             <div>
-              <p className="uppercase tracking-wider text-gray-500 text-[13px] font-extrabold">
+              <p className="uppercase tracking-wider text-gray-500 text-[13px] font-bold">
                 MacBook
               </p>
-              <ul className="mt-3 text-[15px]">
+              <ul className="mt-3 font-normal">
                 <li>
                   <Link
                     href="#"
@@ -185,10 +186,10 @@ export function Navbar_Product() {
               </ul>
             </div>
             <div>
-              <p className="uppercase tracking-wider text-gray-500 text-[13px] font-extrabold">
+              <p className="uppercase tracking-wider text-gray-500 text-[13px] font-bold">
                 Accessories
               </p>
-              <ul className="mt-3 text-[15px]">
+              <ul className="mt-3 font-normal">
                 <li>
                   <Link
                     href="#"

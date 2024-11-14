@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
 import { usePathname } from "next/navigation";
-import { Main_Breadcrumb } from "@/components/common/breadcrumbs/main.breadcrumb";
+import { Main_Breadcrumb } from "@/components/common/breadcrumbs";
 import { Detail_Img_Card } from "@/components/common/cards/detail.img.card";
 import { Product_Content } from "@/components/common/contents/product.content";
 import { Specifications_Table } from "@/components/common/tables/specifications.table";

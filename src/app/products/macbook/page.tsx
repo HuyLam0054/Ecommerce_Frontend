@@ -1,74 +1,58 @@
 "use client";
+
 import * as React from "react";
 import { usePathname } from "next/navigation";
-import { Main_Breadcrumb } from "@/components/common/breadcrumbs/main.breadcrumb";
+import { Main_Breadcrumb } from "@/components/common/breadcrumbs";
+import { Product_Card } from "@/components/common/cards";
+import Filter_And_Soft_Button from "@/components/common/buttons/group-button/filter&soft.button";
 
 export default function MacbookPage() {
   const pathname = usePathname();
 
   return (
-    <div className="p-4 min-h-screen pt-20 lg:pt-32 dark:bg-gray-700">
-      <Main_Breadcrumb pathname={pathname} />
-      <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-3">
-        <div className="grid grid-cols-3 gap-4 mb-4">
-          <div className="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-            <p className="text-2xl text-gray-400 dark:text-gray-500">
-              <svg
-                className="w-3.5 h-3.5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 18 18"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 1v16M1 9h16"
-                />
-              </svg>
-            </p>
-          </div>
-          <div className="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-            <p className="text-2xl text-gray-400 dark:text-gray-500">
-              <svg
-                className="w-3.5 h-3.5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 18 18"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 1v16M1 9h16"
-                />
-              </svg>
-            </p>
-          </div>
-          <div className="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-            <p className="text-2xl text-gray-400 dark:text-gray-500">
-              <svg
-                className="w-3.5 h-3.5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 18 18"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 1v16M1 9h16"
-                />
-              </svg>
-            </p>
-          </div>
-        </div>
+    <div className="min-h-screen pt-20 lg:pt-32 dark:bg-gray-700 lg:px-14">
+      <div className="mb-4 items-end justify-between space-x-3 sm:flex sm:space-y-0 md:mb-8 max-w-screen-2xl mx-auto px-3">
+        <Main_Breadcrumb pathname={pathname} />
+        <Filter_And_Soft_Button />
+      </div>
+
+      <div className="grid lg:grid-cols-3 xl:grid-cols-4 mx-auto justify-items-center items-center gap-8 px-3">
+        <Product_Card
+          discount={35}
+          href="/products/ipad/iPad27"
+          img=""
+          name='Apple iPad 27", 1TB HDD, Retina 5K Display, M3 Max'
+          rating={4.3}
+          review_numb={251}
+          price={899}
+        />
+        <Product_Card
+          discount={35}
+          href="/products/ipad/iPad27"
+          img=""
+          name='Apple iPad 27", 1TB HDD, Retina 5K Display, M3 Max'
+          rating={4.3}
+          review_numb={251}
+          price={899}
+        />
+        <Product_Card
+          discount={35}
+          href="/products/ipad/iPad27"
+          img=""
+          name='Apple iPad 27", 1TB HDD, Retina 5K Display, M3 Max'
+          rating={4.3}
+          review_numb={251}
+          price={899}
+        />
+        <Product_Card
+          discount={35}
+          href="/products/ipad/iPad27"
+          img=""
+          name='Apple iPad 27", 1TB HDD, Retina 5K Display, M3 Max'
+          rating={4.3}
+          review_numb={251}
+          price={899}
+        />
       </div>
     </div>
   );

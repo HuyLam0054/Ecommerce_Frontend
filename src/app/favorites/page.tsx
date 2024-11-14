@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
 import { usePathname } from "next/navigation";
-import { Main_Breadcrumb } from "@/components/common/breadcrumbs/main.breadcrumb";
+import { Main_Breadcrumb } from "@/components/common/breadcrumbs";
 
 export default function FavoritesPage() {
   const pathname = usePathname();
