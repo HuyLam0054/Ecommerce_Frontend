@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { FaFilter, FaSort } from "react-icons/fa";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io";
 import Filter_Modal from "../../modals/filter.modal";
 
 export default function Filter_And_Soft_Button({}) {
@@ -21,7 +21,9 @@ export default function Filter_And_Soft_Button({}) {
         >
           <FaFilter className="mr-2" />
           Filters
-          <IoIosArrowDown className="ml-2" />
+          <IoIosArrowUp
+            className={`${isOpenFilter ? "rotate-90" : ""} ml-2 duration-75`}
+          />
         </button>
         {isOpenFilter && <Filter_Modal setOpenModal={setIsOpenFilter} />}
       </div>
@@ -36,10 +38,12 @@ export default function Filter_And_Soft_Button({}) {
         >
           <FaSort className="mr-2" />
           Sort
-          <IoIosArrowDown className="ml-2" />
+          <IoIosArrowUp
+            className={`${isOpenSort ? "rotate-180" : ""} ml-2 duration-75`}
+          />
         </button>
         {isOpenSort && (
-          <div className="absolute mt-2 px-2 divide-y divide-gray-100 rounded-lg bg-white shadow dark:bg-gray-900">
+          <div className="absolute right-5 mt-2 px-2 divide-y divide-gray-100 rounded-lg bg-white shadow dark:bg-gray-900">
             <ul
               className="p-2 text-left text-sm font-medium text-gray-500 dark:text-gray-400"
               aria-labelledby="sortDropdownButton"

@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
 import { FaCartArrowDown, FaHeart } from "react-icons/fa";
-import { Rating } from "../rating/product.rating";
+import { Rating } from "../common/rating/product.rating";
 export interface IAppProps {
   name: string;
   old_price: number;
@@ -10,7 +10,7 @@ export interface IAppProps {
   numb_review: number;
   detail_content: string;
 }
-export function Product_Content(props: IAppProps) {
+export function Detail_Product_Content(props: IAppProps) {
   return (
     <>
       <div className="bg-gray-100 dark:bg-gray-700 lg:mt-3">

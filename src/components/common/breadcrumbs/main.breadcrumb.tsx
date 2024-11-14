@@ -11,7 +11,7 @@ export interface IMain_BreadcrumbProps {
 export function Main_Breadcrumb({ pathname }: IMain_BreadcrumbProps) {
   const pathParts = pathname.split("/").filter((part) => part);
   return (
-    <nav className="flex mb-3">
+    <nav className="flex mt-5">
       <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
         <li className="inline-flex items-center">
           <Link

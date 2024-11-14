@@ -1,3 +1,4 @@
+// tailwind.config.js
 import type { Config } from "tailwindcss";
 
 export default {
@@ -8,9 +9,15 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      keyframes: {
+        wave: {
+          "0%": { height: "10px" },
+          "50%": { height: "50px" },
+          "100%": { height: "10px" },
+        },
+      },
+      animation: {
+        wave: "wave 1s ease-in-out infinite",
       },
     },
   },

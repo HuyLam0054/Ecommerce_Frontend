@@ -2,6 +2,7 @@
 
 import { SignIn_Button } from "@/components/common/buttons/signin.button";
 import { Signout_Button } from "@/components/common/buttons/signout.button";
+import User_Button from "@/components/common/buttons/user.button";
 import { SearchForm } from "@/components/common/forms/form.search";
 import Link from "next/link";
 import * as React from "react";
@@ -15,33 +16,44 @@ export function Sidebar_Root() {
   const [openProducts, setOpenProducts] = React.useState<boolean>(false);
   const [openServices, setOpenServices] = React.useState<boolean>(false);
   const [openSpecial, setOpenSpecial] = React.useState<boolean>(false);
+  const [isSignin] = React.useState<boolean>(true);
   return (
     <>
       <aside className="fixed top-[72px] right-0 z-40 w-64 h-[calc(100vh-72px)] transition-transform sm:translate-x-0 md:hidden">
         <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 ">
           {/* Menu Product + service */}
-          <ul className="space-y-2 block w-full mr-auto font-sans text-base antialiased font-normal leading-relaxed text-blue-gray-900">
-            <li className="flex">
+          <div className="w-full mb-5 flex justify-center">
+            {isSignin ? (
+              <User_Button
+                img={`/icons/facebook_icons.svg`}
+                name={`Quang Huy Lam`}
+              />
+            ) : (
               <SignIn_Button />
-            </li>
+            )}
+          </div>
+          <ul className="space-y-2 block w-full mr-auto font-sans text-base antialiased font-normal leading-relaxed text-blue-gray-900">
             <li>
               <SearchForm />
             </li>
             <li>
               <button
                 type="button"
-                onClick={() => {
-                  setOpenProducts(!openProducts);
-                  setOpenServices(false);
-                  setOpenSpecial(false);
-                }}
                 className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
               >
                 <AiOutlineProduct />
-                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
+                <Link
+                  href={`/products`}
+                  className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap"
+                >
                   Products
-                </span>
+                </Link>
                 <IoIosArrowUp
+                  onClick={() => {
+                    setOpenProducts(!openProducts);
+                    setOpenServices(false);
+                    setOpenSpecial(false);
+                  }}
                   className={`${openProducts ? "rotate-180" : ""} duration-75`}
                 />
               </button>
@@ -54,7 +66,7 @@ export function Sidebar_Root() {
               >
                 <li>
                   <Link
-                    href="#"
+                    href="/products/iphone"
                     className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                   >
                     Iphone
@@ -62,7 +74,7 @@ export function Sidebar_Root() {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/products/ipad"
                     className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                   >
                     Ipad
@@ -70,7 +82,7 @@ export function Sidebar_Root() {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/products/watch"
                     className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                   >
                     Watch
@@ -78,7 +90,7 @@ export function Sidebar_Root() {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/products/macbook"
                     className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                   >
                     Macbook
@@ -86,7 +98,7 @@ export function Sidebar_Root() {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/products/accessories"
                     className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                   >
                     Accessories

@@ -23,7 +23,7 @@ export function Navbar_Product() {
           <div className="mt-3 grid grid-cols-5 gap-6">
             <div>
               <p className="uppercase tracking-wider text-gray-500 text-[13px] font-bold ">
-                iPhone
+                <Link href={`/products/iphone`}>iPhone</Link>
               </p>
               <ul className="mt-3 font-normal">
                 <li>
@@ -78,7 +78,7 @@ export function Navbar_Product() {
             </div>
             <div>
               <p className="uppercase tracking-wider text-gray-500 text-[13px] font-bold">
-                ipad
+                <Link href={`/products/ipad`}>iPad</Link>
               </p>
               <ul className="mt-3 font-normal">
                 <li>
@@ -117,7 +117,7 @@ export function Navbar_Product() {
             </div>
             <div>
               <p className="uppercase tracking-wider text-gray-500 text-[13px] font-bold">
-                Watch
+                <Link href={`/products/watch`}>Watch</Link>
               </p>
               <ul className="mt-3 font-normal">
                 <li>
@@ -164,7 +164,7 @@ export function Navbar_Product() {
             </div>
             <div>
               <p className="uppercase tracking-wider text-gray-500 text-[13px] font-bold">
-                MacBook
+                <Link href={`/products/macbook`}>MacBook</Link>
               </p>
               <ul className="mt-3 font-normal">
                 <li>
@@ -187,7 +187,7 @@ export function Navbar_Product() {
             </div>
             <div>
               <p className="uppercase tracking-wider text-gray-500 text-[13px] font-bold">
-                Accessories
+                <Link href={`/products/accessories`}>Accessories</Link>
               </p>
               <ul className="mt-3 font-normal">
                 <li>

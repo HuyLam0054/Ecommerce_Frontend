@@ -17,9 +17,11 @@ import { Message_Button } from "@/components/common/buttons/message.button";
 import { FaApple } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
+import User_Button from "@/components/common/buttons/user.button";
 
 export function NavbarRoot() {
   const [isOpenSidebar, setIsOpenSidebar] = React.useState<boolean>(false);
+  const [isSignin] = React.useState<boolean>(true);
   const router = useRouter();
   const pathname = usePathname();
   return (
@@ -55,7 +57,7 @@ export function NavbarRoot() {
         <div className="items-center justify-between w-full md:flex md:w-auto text-sm me-16 gap-6">
           <div className="hidden lg:flex flex-row gap-10 px-4">
             <Cart_Button numb={0} />
-            <Favorite_Button numb={1} />
+            <Favorite_Button numb={12} />
             <Message_Button numb={2} />
           </div>
           <SearchForm />
@@ -149,7 +151,14 @@ export function NavbarRoot() {
           </ul>
         </div>
         <div className="relative group hidden md:block mr-2 lg:mr-20">
-          <SignIn_Button />
+          {isSignin ? (
+            <User_Button
+              img={`/icons/facebook_icons.svg`}
+              name={`Quang Huy Lam`}
+            />
+          ) : (
+            <SignIn_Button />
+          )}
         </div>
         <div className="lg:hidden md:order-2 lg:mr-10">
           <button

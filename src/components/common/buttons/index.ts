@@ -4,5 +4,6 @@ export * from "./favorite.button";
 export * from "./message.button";
 export * from "./new.product";
 export * from "./signin.button";
+export * from "./user.button";
 export * from "./signout.button";
 export * from "./group-button/filter&soft.button";

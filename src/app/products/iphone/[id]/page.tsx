@@ -3,10 +3,10 @@ import * as React from "react";
 import { usePathname } from "next/navigation";
 import { Main_Breadcrumb } from "@/components/common/breadcrumbs";
 import { Detail_Img_Card } from "@/components/common/cards/detail.img.card";
-import { Product_Content } from "@/components/common/contents/product.content";
+import { Detail_Product_Content } from "@/components/contents/detail.product.content";
 import { Specifications_Table } from "@/components/common/tables/specifications.table";
-import { Comment_Content } from "@/components/common/contents/comment";
-import { Recomment_Product } from "@/components/common/contents/recomemd.product";
+import { Comment_Content } from "@/components/contents/comment";
+import { Recomment_Product } from "@/components/contents/recomemd.product";
 
 export default function DetailPage() {
   const pathname = usePathname();
@@ -17,7 +17,7 @@ export default function DetailPage() {
         <Main_Breadcrumb pathname={pathname} />
         <div className="grid lg:grid-cols-2 lg:gap-4 mb-4">
           <Detail_Img_Card />
-          <Product_Content
+          <Detail_Product_Content
             name={`Ipad Pro 11 Series`}
             old_price={349.99}
             new_price={399.99}

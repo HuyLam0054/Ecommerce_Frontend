@@ -2,62 +2,50 @@
 
 import * as React from "react";
 import { usePathname } from "next/navigation";
-import { Main_Breadcrumb } from "@/components/common/breadcrumbs";
 import { Product_Card } from "@/components/common/cards";
-import Filter_And_Soft_Button from "@/components/common/buttons/group-button/filter&soft.button";
+import Product_Page_Layout from "@/components/contents/product.page";
 
 export default function ProductsPage() {
   const pathname = usePathname();
 
   return (
-    <div className="min-h-screen pt-20 lg:pt-32 dark:bg-gray-700 lg:p-14">
-      <div className="mt-2 items-end justify-between space-x-3 sm:flex sm:space-y-0 md:mb-8 max-w-screen-2xl mx-auto px-3">
-        <Main_Breadcrumb pathname={pathname} />
-      </div>
-      {/* Popular */}
-      <div className="flex justify-between mb-5 px-5">
-        <div className="font-bold text-2xl">Populars Products</div>
-        <Filter_And_Soft_Button />
-      </div>
-
-      <div className="grid lg:grid-cols-3 xl:grid-cols-4 mx-auto justify-items-center items-center gap-8 px-3">
-        <Product_Card
-          discount={35}
-          href="/products/ipad/iPad27"
-          img=""
-          name='Apple iPad 27", 1TB HDD, Retina 5K Display, M3 Max'
-          rating={4.3}
-          review_numb={251}
-          price={899}
-        />
-        <Product_Card
-          discount={35}
-          href="/products/ipad/iPad27"
-          img=""
-          name='Apple iPad 27", 1TB HDD, Retina 5K Display, M3 Max'
-          rating={4.3}
-          review_numb={251}
-          price={899}
-        />
-        <Product_Card
-          discount={35}
-          href="/products/ipad/iPad27"
-          img=""
-          name='Apple iPad 27", 1TB HDD, Retina 5K Display, M3 Max'
-          rating={4.3}
-          review_numb={251}
-          price={899}
-        />
-        <Product_Card
-          discount={35}
-          href="/products/ipad/iPad27"
-          img=""
-          name='Apple iPad 27", 1TB HDD, Retina 5K Display, M3 Max'
-          rating={4.3}
-          review_numb={251}
-          price={899}
-        />
-      </div>
-    </div>
+    <Product_Page_Layout pathname={pathname}>
+      <Product_Card
+        discount={35}
+        href="/products/ipad/iPad27"
+        img=""
+        name='Apple iPad 27", 1TB HDD, Retina 5K Display, M3 Max'
+        rating={4.3}
+        review_numb={251}
+        price={899}
+      />
+      <Product_Card
+        discount={35}
+        href="/products/ipad/iPad27"
+        img=""
+        name='Apple iPad 27", 1TB HDD, Retina 5K Display, M3 Max'
+        rating={4.3}
+        review_numb={251}
+        price={899}
+      />
+      <Product_Card
+        discount={35}
+        href="/products/ipad/iPad27"
+        img=""
+        name='Apple iPad 27", 1TB HDD, Retina 5K Display, M3 Max'
+        rating={4.3}
+        review_numb={251}
+        price={899}
+      />
+      <Product_Card
+        discount={35}
+        href="/products/ipad/iPad27"
+        img=""
+        name='Apple iPad 27", 1TB HDD, Retina 5K Display, M3 Max'
+        rating={4.3}
+        review_numb={251}
+        price={899}
+      />
+    </Product_Page_Layout>
   );
 }

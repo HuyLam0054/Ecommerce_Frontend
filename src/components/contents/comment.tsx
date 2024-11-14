@@ -1,8 +1,8 @@
 "use client";
 import * as React from "react";
-import { Comment_Box } from "../chat-bubble/comment.chat";
-import { Chat_Bubble } from "../chat-bubble/chat-bubble";
-import { SignIn_Button } from "../buttons/signin.button";
+import { Comment_Box } from "../common/chat-bubble/comment.chat";
+import { Chat_Bubble } from "../common/chat-bubble/chat-bubble";
+import { SignIn_Button } from "../common/buttons/signin.button";
 
 export function Comment_Content() {
   const [isSignIn, setIsSignIn] = React.useState<boolean>(false);
