@@ -22,19 +22,19 @@ export function FooterRoot() {
         </div>
         {/* Social Icons */}
         <div className="flex justify-center">
-          <Link href="#" className="me-6 h-4 w-4">
+          <Link href="#" className="me-6 h-4 w-4" aria-label="Facebook">
             <FaFacebook className="w-5 h-5" />
           </Link>
-          <Link href="#" className="me-6 h-4 w-4 ">
+          <Link href="#" className="me-6 h-4 w-4" aria-label="Google">
             <FaGoogle className="w-5 h-5" />
           </Link>
-          <Link href="#" className="me-6 h-4 w-4">
+          <Link href="#" className="me-6 h-4 w-4" aria-label="Github">
             <FaGithub className="w-5 h-5" />
           </Link>
-          <Link href="#" className="me-6 h-4 w-4">
+          <Link href="#" className="me-6 h-4 w-4" aria-label="Z">
             <FaZ className="w-5 h-5" />
           </Link>
-          <Link href="#" className="me-6 h-4 w-4">
+          <Link href="#" className="me-6 h-4 w-4" aria-label="Youtube">
             <FaYoutube className="w-5 h-5" />
           </Link>
         </div>
