@@ -10,6 +10,7 @@ export function New_Product_Button() {
   const pathname = usePathname();
   return (
     <button
+      aria-label="new-products"
       onClick={() => router.push(`/products/new`)}
       className={`${
         pathname == `/products/new`

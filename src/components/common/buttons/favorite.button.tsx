@@ -14,6 +14,7 @@ export function Favorite_Button({ numb }: numberInFavo) {
   const pathname = usePathname();
   return (
     <button
+      aria-label="numb-favorite"
       onClick={() => router.push(`/favorites`)}
       className={`${
         pathname == `/favorites`

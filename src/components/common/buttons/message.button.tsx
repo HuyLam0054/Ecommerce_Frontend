@@ -13,6 +13,7 @@ export function Message_Button({ numb }: numberInMessage) {
   const pathname = usePathname();
   return (
     <button
+      aria-label="numb-messages"
       onClick={() => router.push(`/messages`)}
       className={`${
         pathname == `/messages`

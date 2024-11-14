@@ -15,6 +15,7 @@ export function Cart_Button({ numb }: numberInCart) {
   const pathname = usePathname();
   return (
     <button
+      aria-label="numb-in-cart"
       onClick={() => router.push(`/cart`)}
       className={`${
         pathname == `/cart`

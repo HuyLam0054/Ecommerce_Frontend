@@ -12,6 +12,7 @@ export default function Filter_And_Soft_Button({}) {
     <div className="flex items-center space-x-4">
       <div className="w-full">
         <button
+          aria-label="Filters"
           type="button"
           onClick={() => {
             setIsOpenFilter(!isOpenFilter);
@@ -26,6 +27,7 @@ export default function Filter_And_Soft_Button({}) {
       </div>
       <div className="w-full">
         <button
+          aria-label="Sort"
           type="button"
           onClick={() => {
             setIsOpenSort(!isOpenSort);
