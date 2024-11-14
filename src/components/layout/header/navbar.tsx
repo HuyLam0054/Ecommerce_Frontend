@@ -27,7 +27,7 @@ export function NavbarRoot() {
     <nav className="bg-gray-200 border-gray-200 dark:bg-gray-900 fixed lg:block w-full z-50 ">
       <div className="max-w-screen-2xl hidden md:flex flex-wrap items-center justify-between mx-auto mt-2">
         <div className="items-center justify-between w-full md:flex md:w-auto text-sm ml-16">
-          <ul className="flex items-center justify-center font-normal ">
+          <ul className="flex items-center justify-center font-normal">
             <li className="relative group px-3 py-2 cursor-pointer bg-transparent bg-clip-text text-transparent bg-gradient-to-br from-gray-600 to-gray-600 via-gray-600 font-sm hover:from-blue-800 hover:to-indigo-800 hover:via-pink-800 block">
               <Link href="#" className="cursor-pointer">
                 Join Us
@@ -50,7 +50,6 @@ export function NavbarRoot() {
               <Link href="#" className="cursor-pointer ">
                 Help
               </Link>
-              <NavbarHelp />
             </li>
           </ul>
         </div>
