@@ -1,315 +1,207 @@
 "use client";
 
 import { SignIn_Button } from "@/components/common/buttons/signin.button";
-import { Signout_Button } from "@/components/common/buttons/signout.button";
 import User_Button from "@/components/common/buttons/user.button";
 import { SearchForm } from "@/components/common/forms/form.search";
 import Link from "next/link";
 import * as React from "react";
 import { AiOutlineProduct } from "react-icons/ai";
-import { FaInfo, FaNewspaper, FaRegStar } from "react-icons/fa";
+import {
+  FaHandsHelping,
+  FaInfo,
+  FaNewspaper,
+  FaProductHunt,
+  FaRegStar,
+} from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
-import { LuMessageSquare } from "react-icons/lu";
+import { MdMenuOpen } from "react-icons/md";
 import { RiCustomerService2Line } from "react-icons/ri";
 
 export function Sidebar_Root() {
+  const [isOpenSidebar, setIsOpenSidebar] = React.useState<boolean>(false);
   const [openProducts, setOpenProducts] = React.useState<boolean>(false);
   const [openServices, setOpenServices] = React.useState<boolean>(false);
   const [openSpecial, setOpenSpecial] = React.useState<boolean>(false);
   const [isSignin] = React.useState<boolean>(true);
+
+  const closeSidebar = () => {
+    setIsOpenSidebar(false);
+  };
+  const menuData = [
+    {
+      title: "Products",
+      icon: <AiOutlineProduct />,
+      href: "/products",
+      items: [
+        {
+          name: "Iphone",
+          href: "/products/iphone",
+        },
+        {
+          name: "Ipad",
+          href: "/products/ipad",
+        },
+        {
+          name: "Watch",
+          href: "/products/watch",
+        },
+        {
+          name: "Macbook",
+          href: "/products/macbook",
+        },
+        {
+          name: "Accessories",
+          href: "/products/accessories",
+        },
+      ],
+      isOpen: openProducts,
+      onClickOpen: () => {
+        setOpenProducts(!openProducts);
+        setOpenServices(false);
+        setOpenSpecial(false);
+      },
+    },
+    {
+      title: "Service",
+      icon: <RiCustomerService2Line />,
+      href: "/service",
+      items: [
+        {
+          name: "Product Setup & Installation",
+          href: "/service/ProductSetup&Installation",
+        },
+        { name: "Repairs & Technical Support", href: "/service" },
+        { name: "Product Personalization", href: "/service" },
+        { name: "Trade-In Service", href: "/service" },
+        { name: "Gift Wrapping Service", href: "/service" },
+      ],
+      isOpen: openServices,
+      onClickOpen: () => {
+        setOpenServices(!openServices);
+        setOpenProducts(false);
+        setOpenSpecial(false);
+      },
+    },
+    {
+      title: "Special Offer",
+      icon: <FaRegStar />,
+      href: "/special-offer",
+      items: [
+        { name: "Direct Discount", href: "#" },
+        { name: "Bundle Offer", href: "#" },
+        { name: "Trade-In Program", href: "#" },
+        { name: "Education Store Discount", href: "#" },
+        { name: "Free Software/Service Offer", href: "#" },
+        { name: "Installment Payment Plan", href: "#" },
+      ],
+      isOpen: openSpecial,
+      onClickOpen: () => {
+        setOpenSpecial(!openSpecial);
+        setOpenServices(false);
+        setOpenProducts(false);
+      },
+    },
+    {
+      title: "Pre-owned",
+      icon: <FaProductHunt />,
+      href: "/pre-owned",
+    },
+    {
+      title: "News",
+      icon: <FaNewspaper />,
+      href: "/news",
+    },
+    {
+      title: "About Us",
+      icon: <FaInfo />,
+      href: "/about",
+    },
+    {
+      title: "Help",
+      icon: <FaHandsHelping />,
+      href: "/help",
+    },
+  ];
+
   return (
     <>
-      <aside className="fixed top-[72px] right-0 z-40 w-64 h-[calc(100vh-72px)] transition-transform sm:translate-x-0 md:hidden">
-        <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 ">
-          {/* Menu Product + service */}
-          <div className="w-full mb-5 flex justify-center">
-            {isSignin ? (
-              <User_Button
-                img={`/icons/facebook_icons.svg`}
-                name={`Quang Huy Lam`}
-              />
-            ) : (
-              <SignIn_Button />
-            )}
-          </div>
-          <ul className="space-y-2 block w-full mr-auto font-sans text-base antialiased font-normal leading-relaxed text-blue-gray-900">
-            <li>
+      <button
+        type="button"
+        onClick={() => setIsOpenSidebar(!isOpenSidebar)}
+        className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-label={isOpenSidebar ? "Open sidebar" : "Close sidebar"}
+      >
+        <MdMenuOpen className="w-5 h-5" />
+      </button>
+      {isOpenSidebar && (
+        <aside
+          className={`fixed top-[72px] right-0 z-40 w-64 h-[calc(100vh-72px)] transform transition-transform duration-300 ease-in-out will-change-transform md:hidden ${
+            isOpenSidebar ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 ">
+            {/* user button & search form */}
+            <div className="w-full mb-5 flex justify-center">
+              {isSignin ? (
+                <User_Button
+                  img={`/icons/facebook_icons.svg`}
+                  name={`Quang Huy Lam`}
+                  point={2300}
+                />
+              ) : (
+                <SignIn_Button />
+              )}
+            </div>
+            <div className="w-full mb-5 flex justify-center">
               <SearchForm />
-            </li>
-            <li>
-              <button
-                type="button"
-                className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >
-                <AiOutlineProduct />
-                <Link
-                  href={`/products`}
-                  className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap"
-                >
-                  Products
-                </Link>
-                <IoIosArrowUp
-                  onClick={() => {
-                    setOpenProducts(!openProducts);
-                    setOpenServices(false);
-                    setOpenSpecial(false);
-                  }}
-                  className={`${openProducts ? "rotate-180" : ""} duration-75`}
-                />
-              </button>
-              <ul
-                className={`overflow-hidden transition-all duration-100 ease-in-out ${
-                  openProducts
-                    ? "max-h-[1000px] opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <li>
-                  <Link
-                    href="/products/iphone"
-                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+            </div>
+            {/* menu */}
+            <ul className="space-y-2 block w-full mr-auto font-sans text-base antialiased font-normal leading-relaxed text-blue-gray-900">
+              {menuData.map((menu, index) => (
+                <li key={index}>
+                  <button
+                    type="button"
+                    onClick={menu.onClickOpen}
+                    className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                   >
-                    Iphone
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/products/ipad"
-                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                    {menu.icon}
+                    <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
+                      {menu.title}
+                    </span>
+                    {menu.items && (
+                      <IoIosArrowUp
+                        className={`${
+                          menu.isOpen ? "rotate-180" : ""
+                        } duration-75`}
+                      />
+                    )}
+                  </button>
+                  <ul
+                    className={`overflow-hidden transition-all duration-100 ease-in-out ${
+                      menu.isOpen
+                        ? "max-h-[1000px] opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
                   >
-                    Ipad
-                  </Link>
+                    {menu.items &&
+                      menu.items.map((item, idx) => (
+                        <li className="" key={idx}>
+                          <Link
+                            onClick={closeSidebar}
+                            href={item.href}
+                            className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                          >
+                            {item.name}
+                          </Link>
+                        </li>
+                      ))}
+                  </ul>
                 </li>
-                <li>
-                  <Link
-                    href="/products/watch"
-                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    Watch
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/products/macbook"
-                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    Macbook
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/products/accessories"
-                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    Accessories
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <button
-                type="button"
-                onClick={() => {
-                  setOpenServices(!openServices);
-                  setOpenProducts(false);
-                  setOpenSpecial(false);
-                }}
-                className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >
-                <RiCustomerService2Line className="" />
-                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
-                  Service
-                </span>
-                <IoIosArrowUp
-                  className={`${openServices ? "rotate-180" : ""} duration-75`}
-                />
-              </button>
-              <ul
-                className={`overflow-hidden transition-all duration-100 ease-in-out ${
-                  openServices
-                    ? "max-h-[1000px] opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <li>
-                  <Link
-                    href="#"
-                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    Product Setup & Installation
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    Repairs & Technical Support
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    Product Personalization
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    Trade-In Service
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    Gift Wrapping Service
-                  </Link>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <hr className="my-4 border-t-2 border-gray-300" />
-          {/* Other */}
-          <ul className="space-y-2 block w-full mr-auto font-sans text-base antialiased font-normal leading-relaxed text-blue-gray-900">
-            <li>
-              <button
-                type="button"
-                onClick={() => {
-                  setOpenSpecial(!openSpecial);
-                  setOpenServices(false);
-                  setOpenProducts(false);
-                }}
-                className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >
-                <FaRegStar />
-                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
-                  Special Offer
-                </span>
-                <IoIosArrowUp
-                  className={`${openSpecial ? "rotate-180" : ""} duration-75`}
-                />
-              </button>
-              <ul
-                className={`overflow-hidden transition-all duration-100 ease-in-out ${
-                  openSpecial
-                    ? "max-h-[1000px] opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <li>
-                  <Link
-                    href="#"
-                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    Direct Discount
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    Bundle Offer
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    Trade-In Program
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    Education Store Discount
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    Free Software/Service Offer
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    Installment Payment Plan
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <button
-                type="button"
-                onClick={() => {}}
-                className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >
-                <FaInfo />
-                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
-                  About us
-                </span>
-              </button>
-            </li>
-            <li>
-              <button
-                type="button"
-                onClick={() => {}}
-                className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >
-                <FaNewspaper />
-                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
-                  News
-                </span>
-              </button>
-            </li>
-            <li>
-              <button
-                type="button"
-                onClick={() => {}}
-                className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >
-                <RiCustomerService2Line className="" />
-                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
-                  Service
-                </span>
-              </button>
-            </li>
-            <li>
-              <button
-                type="button"
-                className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >
-                <LuMessageSquare className="" />
-                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
-                  Inbox
-                </span>
-                <span className="text-red-500 dark:text-red-300 font-bold">
-                  2
-                </span>
-              </button>
-            </li>
-          </ul>
-          {/* Last */}
-          <hr className="my-4 border-t-2 border-gray-300" />
-          <div className="mt-auto mx-auto">
-            <Signout_Button />
+              ))}
+            </ul>
           </div>
-        </div>
-      </aside>
+        </aside>
+      )}
     </>
   );
 }

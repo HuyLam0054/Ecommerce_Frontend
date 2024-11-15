@@ -4,16 +4,20 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaMedal } from "react-icons/fa";
+import { Signout_Button } from "./signout.button";
 
 interface UserButtonProps {
   name: string;
   img: string;
+  point: number;
 }
 
 export default function User_Button(props: UserButtonProps) {
   const [isOpenUserMenu, setIsOpenUserMenu] = React.useState<boolean>(false);
-  const [ranking] = React.useState<number>(1);
-  // , setRanking
+
+  const ranking =
+    props.point <= 1000 ? "Silver" : props.point <= 3000 ? "Gold" : "Diamond";
+
   return (
     <>
       <div className="max-w-lg min-w-28">
@@ -37,18 +41,16 @@ export default function User_Button(props: UserButtonProps) {
             </span>
             <span
               className={`${
-                ranking === 1
+                ranking === "Diamond"
                   ? "text-cyan-600"
-                  : ranking === 2
+                  : ranking === "Gold"
                   ? "text-orange-600"
                   : "text-gray-600"
-              } flex text-[12px] ml-2`}
+              } flex text-[12px] mx-1`}
             >
               <FaMedal className="mt-0.5" />
-              <span className="mx-2">
-                {ranking === 1 ? "Diamond" : ranking === 2 ? "Gold" : "Silver"}
-              </span>
-              <span className="">Point: 400</span>
+              <span className="">{ranking}</span>
+              <span className="ml-2">Point: {props.point}</span>
             </span>
           </div>
         </button>
@@ -56,7 +58,7 @@ export default function User_Button(props: UserButtonProps) {
         <div
           className={`${
             isOpenUserMenu ? "block" : "hidden"
-          } mt-2 w-full lg:absolute z-10 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600`}
+          } mt-2 w-full md:absolute z-10 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600`}
         >
           <ul
             className="py-2 text-sm text-gray-700 dark:text-gray-200"
@@ -88,12 +90,7 @@ export default function User_Button(props: UserButtonProps) {
             </li>
           </ul>
           <div className="py-1">
-            <Link
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-            >
-              Sign out
-            </Link>
+            <Signout_Button />
           </div>
         </div>
       </div>

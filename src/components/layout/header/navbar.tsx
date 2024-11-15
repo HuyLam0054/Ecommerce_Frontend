@@ -1,4 +1,5 @@
 "use client";
+
 import * as React from "react";
 import Link from "next/link";
 import {
@@ -7,7 +8,6 @@ import {
   Navbar_Service,
   Navbar_Special,
 } from "../../common/navbar";
-import { MdMenuOpen } from "react-icons/md";
 import { SearchForm } from "../../common/forms/form.search";
 import { Sidebar_Root } from "../sidebar/sidebar_root";
 import { Cart_Button } from "@/components/common/buttons/cart.button";
@@ -20,7 +20,6 @@ import { usePathname } from "next/navigation";
 import User_Button from "@/components/common/buttons/user.button";
 
 export function NavbarRoot() {
-  const [isOpenSidebar, setIsOpenSidebar] = React.useState<boolean>(false);
   const [isSignin] = React.useState<boolean>(true);
   const router = useRouter();
   const pathname = usePathname();
@@ -155,21 +154,14 @@ export function NavbarRoot() {
             <User_Button
               img={`/icons/facebook_icons.svg`}
               name={`Quang Huy Lam`}
+              point={3300}
             />
           ) : (
             <SignIn_Button />
           )}
         </div>
         <div className="lg:hidden md:order-2 lg:mr-10">
-          <button
-            type="button"
-            onClick={() => setIsOpenSidebar(!isOpenSidebar)}
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-label={isOpenSidebar ? "Open sidebar" : "Close sidebar"}
-          >
-            <MdMenuOpen className="w-5 h-5" />
-          </button>
-          {isOpenSidebar && <Sidebar_Root />}
+          <Sidebar_Root />
         </div>
       </div>
     </nav>
