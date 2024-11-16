@@ -5,8 +5,8 @@ export default function NotFound() {
   const router = useRouter();
   return (
     <>
-      <section className="bg-center bg-no-repeat bg-[url('https://media.licdn.com/dms/image/v2/D4D12AQF9EJtvWxDOog/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1697690715348?e=2147483647&v=beta&t=-61Te3rtKvgxeHwbP_lwYB1H_W2wgdc1kBHXZD6m4Qc')] bg-gray-700 bg-blend-multiply">
-        <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+      <section className="bg-center h-screen bg-no-repeat bg-[url('https://media.licdn.com/dms/image/v2/D4D12AQF9EJtvWxDOog/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1697690715348?e=2147483647&v=beta&t=-61Te3rtKvgxeHwbP_lwYB1H_W2wgdc1kBHXZD6m4Qc')] bg-gray-700 bg-blend-multiply">
+        <div className="px-4 m-auto max-w-screen-xl text-center py-48 lg:py-56">
           <div className="flex flex-col">
             <div className="flex flex-col items-center">
               <div className="text-indigo-500 font-bold text-7xl">404</div>

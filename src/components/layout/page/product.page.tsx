@@ -1,15 +1,11 @@
 "use client";
 import React from "react";
-import Filter_And_Soft_Button from "../common/buttons/group-button/filter&soft.button";
-import { Main_Breadcrumb } from "../common/breadcrumbs";
-import { Pagination } from "../common/pagination/pagination";
+import Filter_And_Soft_Button from "../../common/buttons/group-button/filter&soft.button";
+import { Main_Breadcrumb } from "../../common/breadcrumbs";
 
 interface ProductPageLayoutProps {
   pathname: string;
   children: React.ReactNode;
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
 }
 
 export default function Product_Page_Layout(props: ProductPageLayoutProps) {
@@ -27,13 +23,7 @@ export default function Product_Page_Layout(props: ProductPageLayoutProps) {
 
       <div className="grid lg:grid-cols-3 xl:grid-cols-4 mx-auto justify-items-center items-center gap-8 px-3">
         {props.children}
-        <div className="col-span-full flex justify-center mt-8">
-          <Pagination
-            currentPage={props.currentPage}
-            totalPages={props.totalPages}
-            onPageChange={props.onPageChange}
-          />
-        </div>
+        <div className="col-span-full flex justify-center mt-8"></div>
       </div>
     </div>
   );

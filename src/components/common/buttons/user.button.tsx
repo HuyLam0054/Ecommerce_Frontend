@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { FaMedal } from "react-icons/fa";
 import { Signout_Button } from "./signout.button";
 
@@ -10,6 +10,7 @@ interface UserButtonProps {
   name: string;
   img: string;
   point: number;
+  isOpenSidebar: boolean;
 }
 
 export default function User_Button(props: UserButtonProps) {
@@ -18,25 +19,33 @@ export default function User_Button(props: UserButtonProps) {
   const ranking =
     props.point <= 1000 ? "Silver" : props.point <= 3000 ? "Gold" : "Diamond";
 
+  useEffect(() => {
+    if (!props.isOpenSidebar) {
+      setIsOpenUserMenu(false);
+    }
+  }, [props.isOpenSidebar]);
+
   return (
     <>
-      <div className="max-w-lg min-w-28">
+      <div className={`w-full`}>
         <button
           aria-label="Userdropdownbtn"
           onClick={() => setIsOpenUserMenu(!isOpenUserMenu)}
           className={`${
             isOpenUserMenu ? "bg-gray-300" : "hover:bg-gray-300"
-          } flex flex-row p-2 rounded-2xl my-auto bg-gray-300 dark:bg-gray-200`}
+          } flex w-full p-2.5 text-sm font-medium text-center rounded-lg items-center justify-center dark:bg-gray-900`}
         >
           <Image
             width={100}
             height={100}
-            className="w-9 h-9 rounded-full cursor-pointer"
+            className="w-9 h-9 rounded-full cursor-pointer mr-2"
             src={props.img}
             alt="Userdropdown"
           />
-          <div className="flex flex-col">
-            <span className="text-[13px] ml-2 font-bold justify-start">
+          <div
+            className={`w-full flex flex-col transition-all duration-500 overflow-hidden whitespace-nowrap`}
+          >
+            <span className="text-[13px] font-bold dark:text-gray-200">
               {props.name}
             </span>
             <span
@@ -46,11 +55,12 @@ export default function User_Button(props: UserButtonProps) {
                   : ranking === "Gold"
                   ? "text-orange-600"
                   : "text-gray-600"
-              } flex text-[12px] mx-1`}
+              } flex text-[10px]`}
             >
-              <FaMedal className="mt-0.5" />
-              <span className="">{ranking}</span>
-              <span className="ml-2">Point: {props.point}</span>
+              <FaMedal className="mt-1" />
+              <span className="mr-2">{ranking}</span>
+
+              <span>Point: {props.point}</span>
             </span>
           </div>
         </button>
@@ -61,7 +71,9 @@ export default function User_Button(props: UserButtonProps) {
           } mt-2 w-full md:absolute z-10 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600`}
         >
           <ul
-            className="py-2 text-sm text-gray-700 dark:text-gray-200"
+            className={`${
+              isOpenUserMenu ? "h-full" : "h-0"
+            }py-2 text-sm text-gray-700 dark:text-gray-200 duration-500`}
             aria-labelledby="avatarButton"
           >
             <li>

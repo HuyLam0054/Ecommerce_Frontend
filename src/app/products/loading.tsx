@@ -2,7 +2,7 @@ import React from "react";
 
 export default function LoadingProducts() {
   return (
-    <div className="flex items-center justify-center w-full h-screen">
+    <div className="flex items-center justify-center w-full h-screen dark:bg-gray-700">
       <div className="flex justify-center items-center space-x-2">
         <div
           className="w-5 h-[10px] bg-blue-400 rounded animate-wave"

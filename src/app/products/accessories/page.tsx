@@ -3,7 +3,7 @@
 import * as React from "react";
 import { usePathname } from "next/navigation";
 import { Product_Card } from "@/components/common/cards";
-import Product_Page_Layout from "@/components/contents/product.page";
+import Product_Page_Layout from "@/components/layout/page/product.page";
 
 export default function AccessoriesPage() {
   const pathname = usePathname();

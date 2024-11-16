@@ -120,13 +120,13 @@ export function NavbarRoot() {
             </li>
             <li
               className={`relative font-bold text-sm group px-3 py-2 cursor-pointer bg-transparent bg-clip-text text-transparent bg-gradient-to-br block ${
-                pathname == "/pre-owned"
+                pathname == "/products/pre-owned"
                   ? "from-blue-800 to-indigo-800 via-pink-800"
                   : "from-gray-600 to-gray-600 via-gray-600 font-sm hover:from-blue-800 hover:to-indigo-800 hover:via-pink-800"
               }`}
             >
               <button
-                onClick={() => router.push("/pre-owned")}
+                onClick={() => router.push("/products/pre-owned")}
                 className="cursor-pointer hover:underline"
               >
                 Pre-owned
@@ -155,6 +155,7 @@ export function NavbarRoot() {
               img={`/icons/facebook_icons.svg`}
               name={`Quang Huy Lam`}
               point={3300}
+              isOpenSidebar={true}
             />
           ) : (
             <SignIn_Button />

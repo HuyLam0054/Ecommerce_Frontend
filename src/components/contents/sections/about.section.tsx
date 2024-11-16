@@ -1,17 +1,20 @@
+"use client";
+import Exp_Card from "@/components/common/cards/exp.card";
+import Image from "next/image";
 import React from "react";
 
 export default function About_Section() {
   return (
     <>
       {/* Section 1 */}
-      <section className="bg-gray-100">
-        <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gray-100 dark:bg-gray-600">
+        <div className="container mx-auto py-5 lg:py-16 px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-            <div className="max-w-lg">
-              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <div className="maxWLg">
+              <h2 className="text-3xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-4xl">
                 About Us
               </h2>
-              <p className="mt-4 text-gray-600 text-lg text-justify">
+              <p className="mt-4 text-gray-600 dark:text-gray-200 text-sm lg:textLg text-justify">
                 Welcome to our premium Apple store, your trusted destination for
                 the latest and most authentic Apple products. We pride ourselves
                 on delivering an exceptional shopping experience, offering a
@@ -24,19 +27,21 @@ export default function About_Section() {
                 technology, where innovation and trust go hand in hand.
               </p>
             </div>
-            <div className="mt-12 md:mt-0">
-              <img
-                src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2019/10/business_with_esa/21093947-3-eng-GB/Business_with_ESA_pillars.jpg"
+            <div className="md:mt-0">
+              <Image
+                width={1000}
+                height={1000}
+                src="/img/about-img.jpg"
                 alt="About Us Image"
-                className="object-cover rounded-lg shadow-md"
+                className="object-cover roundedLg shadow-md"
               />
             </div>
           </div>
         </div>
       </section>
       {/* Section 2 */}
-      <section className="py-24 relative xl:mr-0 lg:mr-5 mr-0">
-        <div className="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
+      <section className="py-12 lg:py-24 relative xl:mr-0 lg:mr-5 mr-0">
+        <div className="w-full maxW-7xl px-4 md:px-5 lg:px-5 mx-auto">
           <div className="w-full justify-start items-center xl:gap-12 gap-10 grid lg:grid-cols-2 grid-cols-1">
             <div className="w-full flex-col justify-center lg:items-start items-center gap-10 inline-flex">
               <div className="w-full flex-col justify-center items-start gap-8 flex">
@@ -47,78 +52,56 @@ export default function About_Section() {
                     </h2>
                     <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
                       Our achievement story is a testament to teamwork and
-                      perseverance. Together, we've overcome challenges,
+                      perseverance. Together, we&apos;ve overcome challenges,
                       celebrated victories, and created a narrative of progress
                       and success.
                     </p>
                   </div>
                 </div>
+                <div className="sm:w-[564px] w-full sm:h-[646px] h-full sm:bg-gray-100 rounded-3xl sm:border border-gray-200 relative sm:hidden">
+                  <Image
+                    width={1000}
+                    height={1000}
+                    className="sm:mt-5 sm:ml-5 w-full h-full rounded-3xl object-cover"
+                    src=""
+                    alt="about Us image"
+                  />
+                </div>
                 <div className="w-full flex-col justify-center items-start gap-6 flex">
                   <div className="w-full justify-start items-center gap-8 grid md:grid-cols-2 grid-cols-1">
-                    <div className="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                      <h4 className="text-gray-900 text-2xl font-bold font-manrope leading-9">
-                        33+ Years
-                      </h4>
-                      <p className="text-gray-500 text-base font-normal leading-relaxed">
-                        Influencing Digital Landscapes Together
-                      </p>
-                    </div>
-                    <div className="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                      <h4 className="text-gray-900 text-2xl font-bold font-manrope leading-9">
-                        125+ Projects
-                      </h4>
-                      <p className="text-gray-500 text-base font-normal leading-relaxed">
-                        Excellence Achieved Through Success
-                      </p>
-                    </div>
+                    <Exp_Card
+                      number={33}
+                      name="Year"
+                      detail="Influencing Digital Landscapes Together"
+                    />
+                    <Exp_Card
+                      number={125}
+                      name="Projects"
+                      detail="Excellence Achieved Through Success"
+                    />
                   </div>
                   <div className="w-full h-full justify-start items-center gap-8 grid md:grid-cols-2 grid-cols-1">
-                    <div className="w-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                      <h4 className="text-gray-900 text-2xl font-bold font-manrope leading-9">
-                        26+ Awards
-                      </h4>
-                      <p className="text-gray-500 text-base font-normal leading-relaxed">
-                        Our Dedication to Innovation Wins Understanding
-                      </p>
-                    </div>
-                    <div className="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                      <h4 className="text-gray-900 text-2xl font-bold font-manrope leading-9">
-                        99% Happy Clients
-                      </h4>
-                      <p className="text-gray-500 text-base font-normal leading-relaxed">
-                        Mirrors our Focus on Client Satisfaction.
-                      </p>
-                    </div>
+                    <Exp_Card
+                      number={26}
+                      name="Awards"
+                      detail="Our Dedication to Innovation Wins Understanding"
+                    />
+                    <Exp_Card
+                      number={231}
+                      name="Happy Clients"
+                      detail="Mirrors our Focus on Client Satisfaction."
+                    />
                   </div>
                 </div>
               </div>
-              <button className="sm:w-fit w-full group px-3.5 py-2 bg-indigo-50 hover:bg-indigo-100 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] transition-all duration-700 ease-in-out justify-center items-center flex">
-                <span className="px-1.5 text-indigo-600 text-sm font-medium leading-6 group-hover:-translate-x-0.5 transition-all duration-700 ease-in-out">
-                  Read More
-                </span>
-                <svg
-                  className="group-hover:translate-x-0.5 transition-all duration-700 ease-in-out"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                >
-                  <path
-                    d="M6.75265 4.49658L11.2528 8.99677L6.75 13.4996"
-                    stroke="#4F46E5"
-                    stroke-width="1.6"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
             </div>
-            <div className="w-full lg:justify-start justify-center items-start flex">
+            <div className="w-full lg:justify-start justify-center items-start hidden md:flex">
               <div className="sm:w-[564px] w-full sm:h-[646px] h-full sm:bg-gray-100 rounded-3xl sm:border border-gray-200 relative">
-                <img
+                <Image
+                  width={1000}
+                  height={1000}
                   className="sm:mt-5 sm:ml-5 w-full h-full rounded-3xl object-cover"
-                  src="https://pagedone.io/asset/uploads/1717742431.png"
+                  src=""
                   alt="about Us image"
                 />
               </div>

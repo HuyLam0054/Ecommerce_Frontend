@@ -1,12 +1,7 @@
 "use client";
 import Link from "next/link";
 import * as React from "react";
-import {
-  FaEye,
-  FaHeart,
-  FaRegMoneyBillAlt,
-  FaShippingFast,
-} from "react-icons/fa";
+import { FaHeart, FaRegMoneyBillAlt, FaShippingFast } from "react-icons/fa";
 import { Rating } from "../rating/product.rating";
 import AddToCart_Button from "../buttons/addtocart.button";
 import { MdDiscount } from "react-icons/md";
@@ -28,7 +23,7 @@ export function Product_Card(props: Product_Item) {
           <Image
             width={500}
             height={500}
-            className="mx-auto h-full object-cover"
+            className="mx-auto h-full object-fit"
             src={props.img ? props.img : "/icons/ipad.svg"}
             alt={props.name}
           />
