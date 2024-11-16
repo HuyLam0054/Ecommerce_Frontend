@@ -65,10 +65,10 @@ export function Sidebar_Root() {
       href: "/service",
       items: [
         {
-          name: "Product Setup & Installation",
+          name: "Setup & Installation",
           href: "/service/ProductSetup&Installation",
         },
-        { name: "Repairs & Technical Support", href: "/service" },
+        { name: "Repairs & Technical", href: "/service" },
         { name: "Product Personalization", href: "/service" },
         { name: "Trade-In Service", href: "/service" },
         { name: "Gift Wrapping Service", href: "/service" },
@@ -89,8 +89,8 @@ export function Sidebar_Root() {
         { name: "Bundle Offer", href: "#" },
         { name: "Trade-In Program", href: "#" },
         { name: "Education Store Discount", href: "#" },
-        { name: "Free Software/Service Offer", href: "#" },
-        { name: "Installment Payment Plan", href: "#" },
+        { name: "Free Software Offer", href: "#" },
+        { name: "Installment Payment", href: "#" },
       ],
       isOpen: openSpecial,
       onClickOpen: () => {
